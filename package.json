@@ -1,0 +1,48 @@
+{
+  "name": "nano-signed-message",
+  "version": "0.1.0",
+  "description": "Canonical signed messages for Nano accounts: prefixed RFC 8785 JSON, blake2b-256 digest, ed25519-blake2b signature in direct or block-envelope mode",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "src",
+    "test-vectors",
+    "SPECIFICATION.md"
+  ],
+  "license": "MIT",
+  "repository": "github:mistakia/nano-signed-message",
+  "keywords": [
+    "nano",
+    "signed-message",
+    "ed25519",
+    "blake2b",
+    "rfc8785"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "prettier": "prettier --write .",
+    "generate:test-vectors": "node scripts/generate-test-vectors.mjs"
+  },
+  "dependencies": {
+    "@noble/curves": "2.4.0",
+    "@noble/hashes": "2.4.0"
+  },
+  "devDependencies": {
+    "@trashman/ed25519-blake2b": "0.0.8",
+    "mocha": "12.0.3",
+    "prettier": "3.9.6"
+  },
+  "dependenciesMeta": {
+    "@trashman/ed25519-blake2b": {
+      "built": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@4.6.0"
+}
