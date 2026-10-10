@@ -24,6 +24,7 @@ describe('nano account codec', () => {
     assert.equal(bytes_to_hex(public_key), PUBLIC_KEY)
     assert.equal(encode_nano_account(public_key), ACCOUNT)
     assert.equal(bytes_to_hex(decode_nano_account(ACCOUNT)), PUBLIC_KEY)
+    assert.equal(bytes_to_hex(get_public_key(PRIVATE_KEY)), PUBLIC_KEY)
   })
 
   it('encodes the burn account', () => {

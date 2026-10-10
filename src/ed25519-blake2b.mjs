@@ -2,6 +2,8 @@ import { eddsa } from '@noble/curves/abstract/edwards.js'
 import { ed25519 } from '@noble/curves/ed25519.js'
 import { blake2b } from '@noble/hashes/blake2.js'
 
+import { to_bytes } from './bytes.mjs'
+
 const blake2b_512 = (message) => blake2b(message, { dkLen: 64 })
 
 const clamp = (bytes) => {
@@ -19,8 +21,11 @@ const ed25519_blake2b = eddsa(ed25519.Point, blake2b_512, {
   zip215: false
 })
 
+// private_key is 32 bytes as a Uint8Array or hex. Returns the public key bytes.
 export function get_public_key(private_key) {
-  return ed25519_blake2b.getPublicKey(private_key)
+  return ed25519_blake2b.getPublicKey(
+    to_bytes(private_key, { length: 32, name: 'private_key' })
+  )
 }
 
 export function sign(message, private_key) {
