@@ -1,0 +1,57 @@
+{
+  "description": "RFC 8785 serializer cases within the allowed value set. canonicalize: parsing input with JSON.parse and serializing MUST give canonical. refuse: parsing input with JSON.parse gives a value the serializer MUST refuse.",
+  "canonicalize": [
+    {
+      "description": "RFC 8785 section 3.2.3 property sorting by UTF-16 code units",
+      "input": "{\n  \"1\": \"One\",\n  \"€\": \"Euro Sign\",\n  \"\\r\": \"Carriage Return\",\n  \"דּ\": \"Hebrew Letter Dalet With Dagesh\",\n  \"😀\": \"Emoji: Grinning Face\",\n  \"\": \"Control\",\n  \"ö\": \"Latin Small Letter O With Diaeresis\"\n}",
+      "canonical": "{\"\\r\":\"Carriage Return\",\"1\":\"One\",\"\":\"Control\",\"ö\":\"Latin Small Letter O With Diaeresis\",\"€\":\"Euro Sign\",\"😀\":\"Emoji: Grinning Face\",\"דּ\":\"Hebrew Letter Dalet With Dagesh\"}"
+    },
+    {
+      "description": "RFC 8785 section 3.2.2.2 string escaping",
+      "input": "\"\\u20ac$\\u000F\\u000aA'\\u0042\\u0022\\u005c\\\\\\\"\\/\"",
+      "canonical": "\"€$\\u000f\\nA'B\\\"\\\\\\\\\\\"/\""
+    },
+    {
+      "description": "RFC 8785 section 3.2.2.1 literals",
+      "input": "[ null , true , false ]",
+      "canonical": "[null,true,false]"
+    },
+    {
+      "description": "nested arrays and objects sort at every depth",
+      "input": "{\"b\":[{\"z\":1,\"a\":2}],\"a\":{}}",
+      "canonical": "{\"a\":{},\"b\":[{\"a\":2,\"z\":1}]}"
+    },
+    {
+      "description": "integers at the safe bounds, negative zero, and an integer written with a fraction and exponent",
+      "input": "[9007199254740991,-9007199254740991,-0,1.0e2,0]",
+      "canonical": "[9007199254740991,-9007199254740991,0,100,0]"
+    },
+    {
+      "description": "U+007F and U+2028 are emitted literally; U+001F is escaped in lowercase",
+      "input": "\"\\u007f\\u2028\\u001F\"",
+      "canonical": "\" \\u001f\""
+    }
+  ],
+  "refuse": [
+    {
+      "description": "a fractional number",
+      "input": "1.5"
+    },
+    {
+      "description": "a number beyond 2^53 - 1",
+      "input": "9007199254740993"
+    },
+    {
+      "description": "an exponent beyond the safe range",
+      "input": "1e300"
+    },
+    {
+      "description": "a lone high surrogate",
+      "input": "\"\\ud800\""
+    },
+    {
+      "description": "a lone low surrogate inside an object key",
+      "input": "{\"\\udc00\":1}"
+    }
+  ]
+}

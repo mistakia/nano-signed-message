@@ -1,0 +1,831 @@
+{
+  "description": "Every conforming verifier MUST accept each vector, verifying at verify.now with verify.domain and verify.actions.",
+  "keys": {
+    "A": {
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"
+    },
+    "B": {
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz"
+    }
+  },
+  "vectors": [
+    {
+      "description": "nano.community set_account_meta, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_account_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "alias": "Example Account"
+          },
+          "references": [],
+          "tags": []
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_account_meta\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Example Account\"},\"references\":[],\"tags\":[]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f6163636f756e745f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b22616c696173223a224578616d706c65204163636f756e74227d2c227265666572656e636573223a5b5d2c2274616773223a5b5d7d2c2276657273696f6e223a317d",
+      "message_digest": "a9ba5349a99926cf1099682e1bcb75cfc8038497bf2ff6d46ec11246c60a85c4",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3cftcf6tm8b8swabkt3g5h7qdmya1g4bhhshyuc8xiakau51o3g6q6eqhggp",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "0d4a52196bddf3c450c6036d6cb318744152fb50b1b8a82834810de3d0a7d786"
+      },
+      "signature": "0f87513b9972a3f4dc4802aa35518259918589c02c2aa6aed9bf4d3d4e69daae4ac005bff7c1a54690dd48167a26f2d2fcc38765129e9819a7e379b47faaba09",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community set_account_meta, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_account_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "alias": "Example Account"
+          },
+          "references": [],
+          "tags": []
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_account_meta\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Example Account\"},\"references\":[],\"tags\":[]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f6163636f756e745f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b22616c696173223a224578616d706c65204163636f756e74227d2c227265666572656e636573223a5b5d2c2274616773223a5b5d7d2c2276657273696f6e223a317d",
+      "message_digest": "a9ba5349a99926cf1099682e1bcb75cfc8038497bf2ff6d46ec11246c60a85c4",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3cftcf6tm8b8swabkt3g5h7qdmya1g4bhhshyuc8xiakau51o3g6q6eqhggp",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "0d4a52196bddf3c450c6036d6cb318744152fb50b1b8a82834810de3d0a7d786"
+      },
+      "signature": "c2d5e3eb7bd2fed58ddc94b9a31cfee324ce16d801a76776ff7564cea3522b93588bb705fb917fc89006f45a776123f41272ee7ee0eb41042d59796ce660020d",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community set_representative_meta, non-ASCII text and an escaped newline, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_representative_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "alias": "Nœud — représentant",
+            "cpu_cores": 8,
+            "description": "Line one\nLine two \"quoted\" 🦦",
+            "website": "https://example.org"
+          },
+          "references": [],
+          "tags": [
+            "representative",
+            "europe"
+          ]
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_representative_meta\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Nœud — représentant\",\"cpu_cores\":8,\"description\":\"Line one\\nLine two \\\"quoted\\\" 🦦\",\"website\":\"https://example.org\"},\"references\":[],\"tags\":[\"representative\",\"europe\"]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f726570726573656e7461746976655f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b22616c696173223a224ec593756420e280942072657072c3a973656e74616e74222c226370755f636f726573223a382c226465736372697074696f6e223a224c696e65206f6e655c6e4c696e652074776f205c2271756f7465645c2220f09fa6a6222c2277656273697465223a2268747470733a2f2f6578616d706c652e6f7267227d2c227265666572656e636573223a5b5d2c2274616773223a5b22726570726573656e746174697665222c226575726f7065225d7d2c2276657273696f6e223a317d",
+      "message_digest": "b59caf1f58a61e3c771baf9c7cbe1012bd76b0a892012cc89311e5d182714c3b",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3fewowhojbiy9jujqdwwhkz316oxgtrcj6i37m6b86h7t8394m3uicfp8qpe",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "4d29a493697d87a4d925411bfb9265df86933b31079960014414e420f5e15452"
+      },
+      "signature": "db76cda48d4540de8f447293f66d8b27ec04867d911e98c5be71959c8953fcfa7e1b91ed1b7f50f7a9b5bdb9f652ace09c95e3f1cefe53ca092ba0ac209e4504",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community set_representative_meta, non-ASCII text and an escaped newline, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_representative_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "alias": "Nœud — représentant",
+            "cpu_cores": 8,
+            "description": "Line one\nLine two \"quoted\" 🦦",
+            "website": "https://example.org"
+          },
+          "references": [],
+          "tags": [
+            "representative",
+            "europe"
+          ]
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_representative_meta\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Nœud — représentant\",\"cpu_cores\":8,\"description\":\"Line one\\nLine two \\\"quoted\\\" 🦦\",\"website\":\"https://example.org\"},\"references\":[],\"tags\":[\"representative\",\"europe\"]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f726570726573656e7461746976655f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b22616c696173223a224ec593756420e280942072657072c3a973656e74616e74222c226370755f636f726573223a382c226465736372697074696f6e223a224c696e65206f6e655c6e4c696e652074776f205c2271756f7465645c2220f09fa6a6222c2277656273697465223a2268747470733a2f2f6578616d706c652e6f7267227d2c227265666572656e636573223a5b5d2c2274616773223a5b22726570726573656e746174697665222c226575726f7065225d7d2c2276657273696f6e223a317d",
+      "message_digest": "b59caf1f58a61e3c771baf9c7cbe1012bd76b0a892012cc89311e5d182714c3b",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3fewowhojbiy9jujqdwwhkz316oxgtrcj6i37m6b86h7t8394m3uicfp8qpe",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "4d29a493697d87a4d925411bfb9265df86933b31079960014414e420f5e15452"
+      },
+      "signature": "af3d7dcff0d8c7fe421fbf4dde8230226c46fb9becadc3a8587a0f7d60f677dc208f4bb508f72409f092f735fdca1a18e5ee1b646f9df98fd189fdeb2f7c4801",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community set_block_meta with references and an expiry, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_block_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "note": "exchange deposit"
+          },
+          "references": [
+            "991cf190094c00f0b68e2e5f75f6bee95a2e0bd93ceaa4a6734db9f19b728948"
+          ],
+          "tags": [
+            "exchange"
+          ]
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721",
+        "expires_at": 1760055000
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_block_meta\",\"domain\":\"nano.community\",\"expires_at\":1760055000,\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"note\":\"exchange deposit\"},\"references\":[\"991cf190094c00f0b68e2e5f75f6bee95a2e0bd93ceaa4a6734db9f19b728948\"],\"tags\":[\"exchange\"]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f626c6f636b5f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c22657870697265735f6174223a313736303035353030302c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b226e6f7465223a2265786368616e6765206465706f736974227d2c227265666572656e636573223a5b2239393163663139303039346330306630623638653265356637356636626565393561326530626439336365616134613637333464623966313962373238393438225d2c2274616773223a5b2265786368616e6765225d7d2c2276657273696f6e223a317d",
+      "message_digest": "8bfc13f21c973b7a79807b86aeda7363a076e0edceba6740e1d0de5fbb941ac0",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_34zw4hs3s7suhbwr1yw8ouf98rx1guigumotex1g5n8ydyxsa8p19szo3paa",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "e1c1747d2876bcfcb3ffda622ed6ace226ba3741c8c6d61d5da806d41ce7dc80"
+      },
+      "signature": "c6fb461449ea36348471bf47646f251fa37904854776ab6aa0eb4a5c54e0913ea662121fc124b0b077366ca748e2dfe42f438f2439a3c1d325f1d918bf67a909",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community set_block_meta with references and an expiry, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "set_block_meta",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "content": {
+            "note": "exchange deposit"
+          },
+          "references": [
+            "991cf190094c00f0b68e2e5f75f6bee95a2e0bd93ceaa4a6734db9f19b728948"
+          ],
+          "tags": [
+            "exchange"
+          ]
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721",
+        "expires_at": 1760055000
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_block_meta\",\"domain\":\"nano.community\",\"expires_at\":1760055000,\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"note\":\"exchange deposit\"},\"references\":[\"991cf190094c00f0b68e2e5f75f6bee95a2e0bd93ceaa4a6734db9f19b728948\"],\"tags\":[\"exchange\"]},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a227365745f626c6f636b5f6d657461222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c22657870697265735f6174223a313736303035353030302c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22636f6e74656e74223a7b226e6f7465223a2265786368616e6765206465706f736974227d2c227265666572656e636573223a5b2239393163663139303039346330306630623638653265356637356636626565393561326530626439336365616134613637333464623966313962373238393438225d2c2274616773223a5b2265786368616e6765225d7d2c2276657273696f6e223a317d",
+      "message_digest": "8bfc13f21c973b7a79807b86aeda7363a076e0edceba6740e1d0de5fbb941ac0",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_34zw4hs3s7suhbwr1yw8ouf98rx1guigumotex1g5n8ydyxsa8p19szo3paa",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "e1c1747d2876bcfcb3ffda622ed6ace226ba3741c8c6d61d5da806d41ce7dc80"
+      },
+      "signature": "f97b8d0754516ca6d2893d139201e7f7e99da4087218a543fe559af8b1b9462f8a6211beeac8ac2695fd60055397f0d1848f19b17715e2425ffd38def0384904",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community link_key, signed by the account, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "link_key",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a226c696e6b5f6b6579222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f7075626c69635f6b6579223a2266343762633637613431663962313739333039383064623564373236616535336637643637653765313065613636303566336332643831343464333936366366227d2c2276657273696f6e223a317d",
+      "message_digest": "d84cd2ba33fb6890812f2589ea158ab6c5d7f9d07a4c1bac3f3051ee81d47c0b",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3p4etcx59yuak41kybebxacrofp7tzwx1yke5gp5ye4jxt1xaz1d65ufhh38",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "acce441e1a82503dfbe1f5a78ce27f58664b32251022ee01ad7acfb8752499b9"
+      },
+      "signature": "cb11ea771a97db09a0cfe604b4792fbacd2899fb0c0155b4d946c5bac4edca38db4fbbee7340dbfee0ef09611ff2e09358eda515298d31af0e20200ca0358603",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community link_key, signed by the account, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "link_key",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a226c696e6b5f6b6579222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f7075626c69635f6b6579223a2266343762633637613431663962313739333039383064623564373236616535336637643637653765313065613636303566336332643831343464333936366366227d2c2276657273696f6e223a317d",
+      "message_digest": "d84cd2ba33fb6890812f2589ea158ab6c5d7f9d07a4c1bac3f3051ee81d47c0b",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3p4etcx59yuak41kybebxacrofp7tzwx1yke5gp5ye4jxt1xaz1d65ufhh38",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "acce441e1a82503dfbe1f5a78ce27f58664b32251022ee01ad7acfb8752499b9"
+      },
+      "signature": "69ff268465ea7d6c3fb4df16075c6bc161f85bc495ab935af3999a718f7f789b97c614d8844300eaf2585428d5a193ae9bfeaccc7454e4f3b6ebf2e84a0b8c09",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community accept_link, signed by the linked key, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "accept_link",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"accept_link\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a226163636570745f6c696e6b222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f6163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237227d2c2276657273696f6e223a317d",
+      "message_digest": "b136b896145d9d67f1ab784c2fddeb8e288180b0983fc021fa2e19543dd904bb",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3ebpq4d3aqexezrtpy4e7zgyq5jai81d383zr1izndisciyxk37uec6ctrrc",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "1c625e5a08d094065b551b13874e6a25dde085da0a3d6c8f3d673afcaeea3ac9"
+      },
+      "signature": "f0f5f3c8b41187d8fa3e1aa9281b2f298f78835445408bdbaea2b17c876ee512ddbc381662096bc9d1e424502c82ebe83b2f83aeade2819b15ed2e2e73874b06",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "accept_link"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community accept_link, signed by the linked key, block mode",
+      "signing_mode": "block",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "accept_link",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"accept_link\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a226163636570745f6c696e6b222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f6163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237227d2c2276657273696f6e223a317d",
+      "message_digest": "b136b896145d9d67f1ab784c2fddeb8e288180b0983fc021fa2e19543dd904bb",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3ebpq4d3aqexezrtpy4e7zgyq5jai81d383zr1izndisciyxk37uec6ctrrc",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "1c625e5a08d094065b551b13874e6a25dde085da0a3d6c8f3d673afcaeea3ac9"
+      },
+      "signature": "c2ec03735710711e441e0c52bd68d9948256775563a8f039a94b3f948c690767ca23d77dd877d7b3adf75aa18a6899ab35156db060f21443f6bc5136c676a10e",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "accept_link"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community revoke_key, signed by the linked key, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "revoke_key",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"revoke_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a227265766f6b655f6b6579222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f7075626c69635f6b6579223a2266343762633637613431663962313739333039383064623564373236616535336637643637653765313065613636303566336332643831343464333936366366227d2c2276657273696f6e223a317d",
+      "message_digest": "83ed2b7834cf2fb6c3a861d41511c309438af34acfa08fb89dbdc8de2bf2d963",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_31zf7fw5bmshpu3tirgn4naw84c5jdsnomx1jywbuhgauroz7pd5mmyho6u5",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "66c5ee90ae2b054de7baa9777750e0cbae3383f5a64c56ffe4ccc3a7a0c0fd3e"
+      },
+      "signature": "4996216cb4147ea84aeae9b844844484cf9f87083aed4d8003a793ceaade51e091ca20957616369c03a1501f7d007b7d5503892a9ab248fcd4ddc5a6e638c404",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "revoke_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community revoke_key, signed by the linked key, block mode",
+      "signing_mode": "block",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "revoke_key",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "linked_public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"revoke_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a227265766f6b655f6b6579222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b226c696e6b65645f7075626c69635f6b6579223a2266343762633637613431663962313739333039383064623564373236616535336637643637653765313065613636303566336332643831343464333936366366227d2c2276657273696f6e223a317d",
+      "message_digest": "83ed2b7834cf2fb6c3a861d41511c309438af34acfa08fb89dbdc8de2bf2d963",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_31zf7fw5bmshpu3tirgn4naw84c5jdsnomx1jywbuhgauroz7pd5mmyho6u5",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "66c5ee90ae2b054de7baa9777750e0cbae3383f5a64c56ffe4ccc3a7a0c0fd3e"
+      },
+      "signature": "36f8a7eee238bf18ea9a1cfb3ef56c8fba422bd6c9ee833d5c6fc3285915c09cca25b8c562f85fb02b22ac3272046b9ed20994cd7ec870f9df0065752c788606",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "revoke_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community register_username, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "register_username",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "username": "example_user"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"register_username\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"username\":\"example_user\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a2272656769737465725f757365726e616d65222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22757365726e616d65223a226578616d706c655f75736572227d2c2276657273696f6e223a317d",
+      "message_digest": "c71c9a9999f5671756c5ddd69e77f9fb37a7b520742482ec1ffecc84cd4d68e8",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3jrwmcesmxd94xdedqgpmsuzmysqnytk1x36idp3zzpeim8ntt9ax7j8yhg5",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "6e4ba8f388e7588d1b438ca5f26ca3b333822efdb3c75380a5b4144ed65db9b6"
+      },
+      "signature": "f2ca6b4f8519b321d71e1d95f6f05c850e4242c88e318c9e633cb5591ed3a280cfedf7821de335773ce622b4d2109646d1fe130f58e815a2ee892fd78e0fdf09",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "register_username"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nano.community register_username, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nano.community",
+        "action": "register_username",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "username": "example_user"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"register_username\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"username\":\"example_user\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a2272656769737465725f757365726e616d65222c22646f6d61696e223a226e616e6f2e636f6d6d756e697479222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22757365726e616d65223a226578616d706c655f75736572227d2c2276657273696f6e223a317d",
+      "message_digest": "c71c9a9999f5671756c5ddd69e77f9fb37a7b520742482ec1ffecc84cd4d68e8",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3jrwmcesmxd94xdedqgpmsuzmysqnytk1x36idp3zzpeim8ntt9ax7j8yhg5",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "6e4ba8f388e7588d1b438ca5f26ca3b333822efdb3c75380a5b4144ed65db9b6"
+      },
+      "signature": "c760194940b9b83dbf8d28140d4c4bc60d988d0d9125f7f8abb80ee4f78dcae36fee865eb5ebd38a9a4ed0af6d871a3f0035b71c98f6038f5b6240c93bfb8404",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "register_username"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nostr bind_nostr_key, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "nostr_public_key": "7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e",
+      "payload": {
+        "version": 1,
+        "domain": "nostr",
+        "action": "bind_nostr_key",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {},
+        "statement": "Verifying that I control the following Nostr public key: npub10elfcs4fr0l0r8af98jlmgdh9c8tcxjvz9qkw038js35mp4dma8qzvjptg"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"bind_nostr_key\",\"domain\":\"nostr\",\"issued_at\":1760054400,\"parameters\":{},\"statement\":\"Verifying that I control the following Nostr public key: npub10elfcs4fr0l0r8af98jlmgdh9c8tcxjvz9qkw038js35mp4dma8qzvjptg\",\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a2262696e645f6e6f7374725f6b6579222c22646f6d61696e223a226e6f737472222c226973737565645f6174223a313736303035343430302c22706172616d6574657273223a7b7d2c2273746174656d656e74223a22566572696679696e672074686174204920636f6e74726f6c2074686520666f6c6c6f77696e67204e6f737472207075626c6963206b65793a206e7075623130656c666373346672306c307238616639386a6c6d6764683963387463786a767a39716b773033386a7333356d7034646d6138717a766a707467222c2276657273696f6e223a317d",
+      "message_digest": "6855a262fcae778f146e872d9969ede2fab9fa5d68d1cf3abc423bd1976d4e2e",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1t4onbjhsdmqjwc8x3sfm7nyurqtq9x7tt8jswxdrijut8dptmjgiihg3fjr",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "ad7eab73e1574497ebbfddaa7f5d8d80c209f933a7bb7e3a31f19f6545968b74"
+      },
+      "signature": "abd5a484b0c2074d1d21ad4b3fb930d7ad97131f4a80ea0332bef6beb7361388452602ac782de36470d24db71d3b62a81d7e2588a6577bbd582de43a65cc9907",
+      "verify": {
+        "domain": "nostr",
+        "actions": [
+          "bind_nostr_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nostr bind_nostr_key, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "nostr_public_key": "7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e",
+      "payload": {
+        "version": 1,
+        "domain": "nostr",
+        "action": "bind_nostr_key",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {},
+        "statement": "Verifying that I control the following Nostr public key: npub10elfcs4fr0l0r8af98jlmgdh9c8tcxjvz9qkw038js35mp4dma8qzvjptg"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"bind_nostr_key\",\"domain\":\"nostr\",\"issued_at\":1760054400,\"parameters\":{},\"statement\":\"Verifying that I control the following Nostr public key: npub10elfcs4fr0l0r8af98jlmgdh9c8tcxjvz9qkw038js35mp4dma8qzvjptg\",\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a2262696e645f6e6f7374725f6b6579222c22646f6d61696e223a226e6f737472222c226973737565645f6174223a313736303035343430302c22706172616d6574657273223a7b7d2c2273746174656d656e74223a22566572696679696e672074686174204920636f6e74726f6c2074686520666f6c6c6f77696e67204e6f737472207075626c6963206b65793a206e7075623130656c666373346672306c307238616639386a6c6d6764683963387463786a767a39716b773033386a7333356d7034646d6138717a766a707467222c2276657273696f6e223a317d",
+      "message_digest": "6855a262fcae778f146e872d9969ede2fab9fa5d68d1cf3abc423bd1976d4e2e",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1t4onbjhsdmqjwc8x3sfm7nyurqtq9x7tt8jswxdrijut8dptmjgiihg3fjr",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "ad7eab73e1574497ebbfddaa7f5d8d80c209f933a7bb7e3a31f19f6545968b74"
+      },
+      "signature": "7483ca49327b4d37b5d21fd454103e54b96f94dbd7080438f1d75c8a44c2edabf6d1fc206f0d40bcb9dee3b5186fe831ff0273534b9fe7ddaa0f0d4aebd4cc0a",
+      "verify": {
+        "domain": "nostr",
+        "actions": [
+          "bind_nostr_key"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nostr pledge, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nostr",
+        "action": "pledge",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "issue_event_id": "d1b3f5a7c9e1d3b5f7a9c1e3d5b7f9a1c3e5d7b9f1a3c5e7d9b1f3a5c7e9d1b3",
+          "amount_raw": "1000000000000000000000000000000",
+          "nostr_public_key": "7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e"
+        }
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"pledge\",\"domain\":\"nostr\",\"issued_at\":1760054400,\"parameters\":{\"amount_raw\":\"1000000000000000000000000000000\",\"issue_event_id\":\"d1b3f5a7c9e1d3b5f7a9c1e3d5b7f9a1c3e5d7b9f1a3c5e7d9b1f3a5c7e9d1b3\",\"nostr_public_key\":\"7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a22706c65646765222c22646f6d61696e223a226e6f737472222c226973737565645f6174223a313736303035343430302c22706172616d6574657273223a7b22616d6f756e745f726177223a2231303030303030303030303030303030303030303030303030303030303030222c2269737375655f6576656e745f6964223a2264316233663561376339653164336235663761396331653364356237663961316333653564376239663161336335653764396231663361356337653964316233222c226e6f7374725f7075626c69635f6b6579223a2237653765396334326139316266656631396661393239653566646131623732653065626331613463313134313637336532373934323334643836616464663465227d2c2276657273696f6e223a317d",
+      "message_digest": "6ee669c89a6c12f0ea2ebf5510901308f8304ba04bb2b6e2a277153fd74e78df",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1uq8f96bnu1ky5o4xhto44a3849r837t1kxkpujc6xro9zdnwy8ztu8ufrj4",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "ae91b62ce1caf914f714c18b0d3fa4298d4dda1abcc2275eaaebc55c1683f6a5"
+      },
+      "signature": "cb803ac0d300d40c015357575e429f80653a42477566e03027101be52c73df5dff575e6467bcc8819104a418d387532cef27ec79553efadb7478140262563b03",
+      "verify": {
+        "domain": "nostr",
+        "actions": [
+          "pledge"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "nostr pledge, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "nostr",
+        "action": "pledge",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {
+          "issue_event_id": "d1b3f5a7c9e1d3b5f7a9c1e3d5b7f9a1c3e5d7b9f1a3c5e7d9b1f3a5c7e9d1b3",
+          "amount_raw": "1000000000000000000000000000000",
+          "nostr_public_key": "7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e"
+        }
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"pledge\",\"domain\":\"nostr\",\"issued_at\":1760054400,\"parameters\":{\"amount_raw\":\"1000000000000000000000000000000\",\"issue_event_id\":\"d1b3f5a7c9e1d3b5f7a9c1e3d5b7f9a1c3e5d7b9f1a3c5e7d9b1f3a5c7e9d1b3\",\"nostr_public_key\":\"7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a22706c65646765222c22646f6d61696e223a226e6f737472222c226973737565645f6174223a313736303035343430302c22706172616d6574657273223a7b22616d6f756e745f726177223a2231303030303030303030303030303030303030303030303030303030303030222c2269737375655f6576656e745f6964223a2264316233663561376339653164336235663761396331653364356237663961316333653564376239663161336335653764396231663361356337653964316233222c226e6f7374725f7075626c69635f6b6579223a2237653765396334326139316266656631396661393239653566646131623732653065626331613463313134313637336532373934323334643836616464663465227d2c2276657273696f6e223a317d",
+      "message_digest": "6ee669c89a6c12f0ea2ebf5510901308f8304ba04bb2b6e2a277153fd74e78df",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1uq8f96bnu1ky5o4xhto44a3849r837t1kxkpujc6xro9zdnwy8ztu8ufrj4",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "ae91b62ce1caf914f714c18b0d3fa4298d4dda1abcc2275eaaebc55c1683f6a5"
+      },
+      "signature": "4843a9c4a79f5cae5ab7d9226914305b01cd7d85b0625d2e78f0360dcc982ade44b4ec80023df472c7ef9a9f40b236cc5796966d6cbb37e76484412b3cdda000",
+      "verify": {
+        "domain": "nostr",
+        "actions": [
+          "pledge"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "base create_session, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "create_session",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {},
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"create_session\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a226372656174655f73657373696f6e222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b7d2c2276657273696f6e223a317d",
+      "message_digest": "e7bbdc14f5c91d41859cfe21e82e534b1078a7704e02b8c7c8e98a09956e420e",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3sxuuichdkaxa84sszj3x1q78krih4mq1mi4q55wjtec38cpwiignhctpy77",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "e4644ae43f470532ce9a816f2fbe229fdd327a60cb027a0a437f8ace81e31991"
+      },
+      "signature": "6348f77528c48a3865a71b9ab7231efec6f44763599e65728ad122bfca0157e7472789972cb27ee527ecdd7ed384e453173a7e9c14d1812ca87941c76c4f3208",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "create_session"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "base create_session, block mode",
+      "signing_mode": "block",
+      "private_key": "9f0e444c69f77a49bd0be89db92c38fe713e0963165cca12faf5712d7657120f",
+      "public_key": "c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b",
+      "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "create_session",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "issued_at": 1760054400,
+        "parameters": {},
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"create_session\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f3369316171316363686e6d626e397835727362617038623135616b666837776a377077736b757a693761687a386f7136636f62643939643472336237222c22616374696f6e223a226372656174655f73657373696f6e222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b7d2c2276657273696f6e223a317d",
+      "message_digest": "e7bbdc14f5c91d41859cfe21e82e534b1078a7704e02b8c7c8e98a09956e420e",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3sxuuichdkaxa84sszj3x1q78krih4mq1mi4q55wjtec38cpwiignhctpy77",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "e4644ae43f470532ce9a816f2fbe229fdd327a60cb027a0a437f8ace81e31991"
+      },
+      "signature": "be9fbc742d8ab2d9ec708b8e97cb8d4def7881086ab671f3b3b0b6295d06074e612f1e0d6d0f56d3283aaf204335a43db6f85704f22983fe9d21fb0e5ca5c90c",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "create_session"
+        ],
+        "now": 1760054400
+      }
+    }
+  ]
+}

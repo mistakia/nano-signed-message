@@ -1,0 +1,295 @@
+{
+  "description": "Every conforming verifier MUST reject each vector. error is the reference library code; native_valid is what the native ed25519-donna verifier returns for the bare signature check.",
+  "vectors": [
+    {
+      "description": "top-level keys in reverse order, validly signed",
+      "rule": "canonical-serialization",
+      "message": "{\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"issued_at\":1760054400,\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"version\":1}",
+      "signature": "5981245dfb804fe03a0103feb9bf6112b605b7e3c6705b731887187c64de24d71622942347f92981a7612460d151770fb019bc57b64a3e911749cb4b7ff6f507",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "extra whitespace, validly signed",
+      "rule": "canonical-serialization",
+      "message": "{\n  \"account\": \"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\n  \"action\": \"link_key\",\n  \"domain\": \"nano.community\",\n  \"issued_at\": 1760054400,\n  \"nonce\": \"6e616e6f2d7369676e65642d6d736721\",\n  \"parameters\": {\n    \"linked_public_key\": \"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"\n  },\n  \"version\": 1\n}",
+      "signature": "c654c3a63b70574fe847b79685c71492ce3234b806d3f68a2cba3392d47d7b32b656c11d9fd07a89bb22ad00a1781b84bbe7fe7c7afdf193410de74d56dfa80c",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "duplicate action member, validly signed",
+      "rule": "canonical-serialization",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"revoke_key\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "5638a6e074b4b4f1a422b0b452a685d43085679ad73740806c37b8ef5f212b0a7a9c8c7fe2c83beac31ca9d31efdd5c1a4329ee85f0f6d34e8aa8b86d77e0f0e",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "statement holding a lone surrogate, validly signed",
+      "rule": "value-rules",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"statement\":\"\\ud800\",\"version\":1}",
+      "signature": "9f997c39f39437cfbe7e745e0ef501b66055478c2d0703825a03b449a245fbd40ac75cd60e66d498b043241ce86257d30f6bb1a744b63697f9f14004c0f90509",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "an unnecessary \\u escape, validly signed",
+      "rule": "canonical-serialization",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"\\u006cink_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "d65940a059b8d178914e2e2bd8419f7378dda3710dc05aefcc0060ac50fbff5e337a001ad9a50d8aa8e11c574c1ec22b93d36d6ac9ddd0ec2570c9ddddddfd03",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "account names key B but key A signed",
+      "rule": "account-binds-key",
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "f8ac19a9c01e5641e0fd872a70670e857be2172af698bf547d106736217d41e2fe34a4a2b600d320fb33b647e1da7724e33630ee55b885a68a1e5eebbdfc180a",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_signature"
+    },
+    {
+      "description": "a float inside parameters, validly signed",
+      "rule": "value-rules",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_account_meta\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Example Account\",\"cpu_cores\":1.5},\"references\":[],\"tags\":[]},\"version\":1}",
+      "signature": "ec786e294d8f600accaa7d46bf8283ddd18a7c59716bdaecb4d16b6bb175c8f99a421b50283644b4841d33c1d287d6e6bec3b7b1523a3c3363c2364a937e680c",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "an integer beyond 2^53 - 1, validly signed",
+      "rule": "value-rules",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"set_account_meta\",\"domain\":\"nano.community\",\"issued_at\":9007199254740993,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"content\":{\"alias\":\"Example Account\"},\"references\":[],\"tags\":[]},\"version\":1}",
+      "signature": "f78092d65ae8cbf54db3c90e316837b0403a70320a2056d1e0af1d62815bea8910c6b48889650a4cc7b4499e5089334fc9d5b603636c233f8924ce9834a5140d",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      },
+      "error": "non_canonical"
+    },
+    {
+      "description": "an unknown top-level field, validly signed",
+      "rule": "payload",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"extra\":true,\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "e38690f8f07feaaa182b07d5b3fccc88b95eb1ec56c4629e444ed6cbb12624f84316e5991b4f52f4a59da1a8461ef035312ebc679d70812a792b5571621cf804",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_payload"
+    },
+    {
+      "description": "an optional field present as null, validly signed",
+      "rule": "payload",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":null,\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "4092c0b5b6d44c6dfe56d599e7aa7436e9e4b96cd798b51bc6224b0c8a5462b6bda15f390763faee53305b66d027831d0f8deb29b2ee9e4ab42802bfe31b470c",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_payload"
+    },
+    {
+      "description": "an uppercase nonce, validly signed",
+      "rule": "field-syntax",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6E616E6F2D7369676E65642D6D736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "6f73784decc71ff0f6e193856fcafe1c0127ef10a3a119d5489827d822599b3853b1b849c6de8d3f7a928a7bc9bb91c8534a22c1c2d6aef302dbac2c3f231904",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_payload"
+    },
+    {
+      "description": "version 2, validly signed",
+      "rule": "payload",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":2}",
+      "signature": "b54c55be3b40197dacf895698027a6f657f3b2b16c0151d2084b00249b8e89217e4cb2859101a09c60f2412df65b83054ff0b2745e6a556aa99eacadaa512d03",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_payload"
+    },
+    {
+      "description": "linked_public_key changed after signing",
+      "rule": "signature",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"c008b814a7d269a1fa3c6528b19201a24d797912db9996ff02a1ff356e45552b\"},\"version\":1}",
+      "signature": "cb11ea771a97db09a0cfe604b4792fbacd2899fb0c0155b4d946c5bac4edca38db4fbbee7340dbfee0ef09611ff2e09358eda515298d31af0e20200ca0358603",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_signature"
+    },
+    {
+      "description": "signed for another domain",
+      "rule": "domain",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"evil.example\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "5e547b47b2103c6edbaf8713113d5a18cbe85690f993cea436d16111fe396021df4b88b8c66d3c01faa3b8088e556a1a90389fd19294b8c6eb78ee3a12d7a600",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "wrong_domain"
+    },
+    {
+      "description": "a link_key message offered where only message actions are allowed",
+      "rule": "action",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "cb11ea771a97db09a0cfe604b4792fbacd2899fb0c0155b4d946c5bac4edca38db4fbbee7340dbfee0ef09611ff2e09358eda515298d31af0e20200ca0358603",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "set_account_meta",
+          "set_representative_meta",
+          "set_block_meta"
+        ],
+        "now": 1760054400
+      },
+      "error": "action_not_allowed"
+    },
+    {
+      "description": "verified at expires_at",
+      "rule": "expiry",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"expires_at\":1760054460,\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "8dae8049fde0666d59cbe3c2029e2ce22be61f9f6782bcc560b9e919a65421ebf64ee503d6b0b59f29bcf1e310d2b442c125f2e1ddaaeec3ae5f3a328bafb209",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054460
+      },
+      "error": "expired"
+    },
+    {
+      "description": "a valid signature with S replaced by S + L",
+      "rule": "strict-verification",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "cb11ea771a97db09a0cfe604b4792fbacd2899fb0c0155b4d946c5bac4edca38c823b14b8ea3ed56b78c0104feebbfa858eda515298d31af0e20200ca0358613",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_signature",
+      "native_valid": true
+    },
+    {
+      "description": "R replaced by a non-canonical point encoding",
+      "rule": "strict-verification",
+      "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "f0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff7fdb4fbbee7340dbfee0ef09611ff2e09358eda515298d31af0e20200ca0358603",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_signature",
+      "native_valid": false
+    },
+    {
+      "description": "account encoding a non-canonical public key",
+      "rule": "strict-verification",
+      "message": "{\"account\":\"nano_3w9zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzuz9wogus1y\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "cb11ea771a97db09a0cfe604b4792fbacd2899fb0c0155b4d946c5bac4edca38db4fbbee7340dbfee0ef09611ff2e09358eda515298d31af0e20200ca0358603",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_account",
+      "native_valid": false
+    },
+    {
+      "description": "a forged signature for the burn account, whose public key has small order",
+      "rule": "strict-verification",
+      "message": "{\"account\":\"nano_1111111111111111111111111111111111111111111111111111hifc8npp\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"issued_at\":1760054400,\"nonce\":\"00000000000000000000000000000000\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
+      "signature": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "verify": {
+        "domain": "nano.community",
+        "actions": [
+          "link_key"
+        ],
+        "now": 1760054400
+      },
+      "error": "invalid_account",
+      "native_valid": true
+    }
+  ]
+}
