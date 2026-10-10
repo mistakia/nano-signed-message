@@ -14,7 +14,10 @@
     "SPECIFICATION.md"
   ],
   "license": "MIT",
-  "repository": "github:mistakia/nano-signed-message",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistakia/nano-signed-message.git"
+  },
   "keywords": [
     "nano",
     "signed-message",
