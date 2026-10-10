@@ -166,7 +166,7 @@ Given a wire unit, the domain the verifier expects, the set of actions it allows
 2. Parse `message` as JSON. Reject a parse error, a duplicate member name, or a lone surrogate.
 3. Re-serialize the parsed value with JCS. Reject if the result is not identical to `message`.
 4. Validate the payload against [Payload](#payload): required fields present, no unknown top-level fields, field syntax, value rules, `version` equal to `1`, `expires_at` greater than `issued_at` when present.
-5. Reject if `domain` is not the expected domain. The verifier compares exact strings.
+5. Reject if `domain` is not the expected domain. The verifier compares exact strings. A service reachable under several hosts MAY accept a fixed set of them.
 6. Reject if `action` is not in the allowed set.
 7. Decode `account` to the public key, checking its checksum. Reject a small-order or non-canonical key.
 8. Compute the signed text and the message digest.

@@ -14,8 +14,8 @@ const fail = (code, message) => {
   throw new NanoSignedMessageError(code, message)
 }
 
-// Verifies a wire unit against the domain the caller expects and the actions it
-// allows. Returns the payload, signer public key, signing mode and message
+// Verifies a wire unit against the domain the caller expects (one domain, or
+// the fixed set of hosts it serves under) and the actions it allows. Returns the payload, signer public key, signing mode and message
 // digest, or throws a NanoSignedMessageError with a code from ERROR_CODES.
 export default function verify_signed_message({
   message,
@@ -24,8 +24,14 @@ export default function verify_signed_message({
   actions,
   now = Math.floor(Date.now() / 1000)
 }) {
-  if (typeof domain !== 'string' || !domain) {
-    throw new TypeError('domain is required')
+  const domains = Array.isArray(domain) ? domain : [domain]
+  if (
+    !domains.length ||
+    !domains.every((item) => typeof item === 'string' && item)
+  ) {
+    throw new TypeError(
+      'domain must be a string or a non-empty array of strings'
+    )
   }
   if (!Array.isArray(actions) || !actions.length) {
     throw new TypeError('actions must be a non-empty array')
@@ -41,8 +47,11 @@ export default function verify_signed_message({
   const payload = parse_canonical_json(message)
   validate_payload(payload)
 
-  if (payload.domain !== domain) {
-    fail(ERROR_CODES.WRONG_DOMAIN, `domain ${payload.domain} is not ${domain}`)
+  if (!domains.includes(payload.domain)) {
+    fail(
+      ERROR_CODES.WRONG_DOMAIN,
+      `domain ${payload.domain} is not ${domains.join(' or ')}`
+    )
   }
   if (!actions.includes(payload.action)) {
     fail(

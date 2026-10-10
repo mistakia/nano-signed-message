@@ -145,6 +145,21 @@ describe('sign_message and verify_signed_message', () => {
     )
   })
 
+  it('accepts any domain in a fixed set', () => {
+    const wire = sign_message({
+      payload: payload({ domain: 'b.example' }),
+      private_key: PRIVATE_KEY
+    })
+    assert.equal(
+      verify(wire, { domain: ['a.example', 'b.example'] }).payload.domain,
+      'b.example'
+    )
+    assert.throws(() => verify(wire, { domain: ['a.example'] }), {
+      code: ERROR_CODES.WRONG_DOMAIN
+    })
+    assert.throws(() => verify(wire, { domain: [] }), TypeError)
+  })
+
   it('enforces expires_at against now', () => {
     const wire = sign_message({
       payload: payload({ expires_at: NOW + 10 }),
