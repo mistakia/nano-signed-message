@@ -826,6 +826,158 @@
         ],
         "now": 1760054400
       }
+    },
+    {
+      "description": "base claim_invite, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "claim_invite",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "invite_id": "1b4e28ba-2fa1-41d2-883f-0016d3cca427"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"claim_invite\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"invite_id\":\"1b4e28ba-2fa1-41d2-883f-0016d3cca427\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a22636c61696d5f696e76697465222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22696e766974655f6964223a2231623465323862612d326661312d343164322d383833662d303031366433636361343237227d2c2276657273696f6e223a317d",
+      "message_digest": "dca85860b137e0a8d0837c5d019df89ba5f8f7f4f753ce7d929a137101847a6a",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3q7ad3id4fz1o5aa8z4x18gzj8x7z5uzbxtmssys78img61raymca7rxpxd6",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "5ab776c63518452d94e1506a084390869ccced9d08d8e55bd812557090d6f906"
+      },
+      "signature": "3047eba80a28785112554d712c8f7713821f81c5925623209086c2dba4bf0e50faf1cb24ba60dba411acbbfb9a3bce3968df6d9c181618b058efbfcf9eba1e0b",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "claim_invite"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "base claim_invite, block mode",
+      "signing_mode": "block",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "claim_invite",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "invite_id": "1b4e28ba-2fa1-41d2-883f-0016d3cca427"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"claim_invite\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"invite_id\":\"1b4e28ba-2fa1-41d2-883f-0016d3cca427\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a22636c61696d5f696e76697465222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b22696e766974655f6964223a2231623465323862612d326661312d343164322d383833662d303031366433636361343237227d2c2276657273696f6e223a317d",
+      "message_digest": "dca85860b137e0a8d0837c5d019df89ba5f8f7f4f753ce7d929a137101847a6a",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_3q7ad3id4fz1o5aa8z4x18gzj8x7z5uzbxtmssys78img61raymca7rxpxd6",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "5ab776c63518452d94e1506a084390869ccced9d08d8e55bd812557090d6f906"
+      },
+      "signature": "affc4bd0a048c2e630edb839419dd74e575f8a93835f66a9848737e47c0eb7135eb5a196b3d18c2bbaaf98a007993d4840735b252f592e58e0fac26e3ed39a0e",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "claim_invite"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "base claim_recovery, direct mode",
+      "signing_mode": "direct",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "claim_recovery",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "recovery_id": "6f1c2d3e4a5b4c6d8e7f001122334455"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"claim_recovery\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"recovery_id\":\"6f1c2d3e4a5b4c6d8e7f001122334455\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a22636c61696d5f7265636f76657279222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b227265636f766572795f6964223a223666316332643365346135623463366438653766303031313232333334343535227d2c2276657273696f6e223a317d",
+      "message_digest": "342b27b7924b99b4efc78acc14ea00841215be0adf583b071913dd2dd058f829",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1f3d6yus6kwspmqwh4pe4mo1331k4pz1oqtr9e5jk6yx7qa7jy3b8is4syy7",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "69142dcf0c0abdc2b5d04d1ce436ed4bd1853c83f2ce6c5eb599ce5e01cff50c"
+      },
+      "signature": "dccc072e79ca47a13434111ac14be68abda8c0dd0019ef1f2f43fc7659f6148e261bc94b32113fd76c7e96a81de157789941d624714c77a9d33792d402c37201",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "claim_recovery"
+        ],
+        "now": 1760054400
+      }
+    },
+    {
+      "description": "base claim_recovery, block mode",
+      "signing_mode": "block",
+      "private_key": "9d7256d272a2993c4bc93db12457fdb5f2422954c1764ef30a8182c9e700110b",
+      "public_key": "f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf",
+      "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+      "payload": {
+        "version": 1,
+        "domain": "base.example.org",
+        "action": "claim_recovery",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "issued_at": 1760054400,
+        "parameters": {
+          "recovery_id": "6f1c2d3e4a5b4c6d8e7f001122334455"
+        },
+        "nonce": "6e616e6f2d7369676e65642d6d736721"
+      },
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"claim_recovery\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"recovery_id\":\"6f1c2d3e4a5b4c6d8e7f001122334455\"},\"version\":1}",
+      "signed_text": "4e616e6f205369676e6564204d6573736167653a0a7b226163636f756e74223a226e616e6f5f33783575727378363579666a683672626935666f74776d63776e7a7174737a39773639636572347a39697072346a386d6b737068796a70397239757a222c22616374696f6e223a22636c61696d5f7265636f76657279222c22646f6d61696e223a22626173652e6578616d706c652e6f7267222c226973737565645f6174223a313736303035343430302c226e6f6e6365223a223665363136653666326437333639363736653635363432643664373336373231222c22706172616d6574657273223a7b227265636f766572795f6964223a223666316332643365346135623463366438653766303031313232333334343535227d2c2276657273696f6e223a317d",
+      "message_digest": "342b27b7924b99b4efc78acc14ea00841215be0adf583b071913dd2dd058f829",
+      "block_envelope": {
+        "type": "state",
+        "account": "nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz",
+        "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+        "representative": "nano_1f3d6yus6kwspmqwh4pe4mo1331k4pz1oqtr9e5jk6yx7qa7jy3b8is4syy7",
+        "balance": "0",
+        "link": "0000000000000000000000000000000000000000000000000000000000000000",
+        "hash": "69142dcf0c0abdc2b5d04d1ce436ed4bd1853c83f2ce6c5eb599ce5e01cff50c"
+      },
+      "signature": "50c4eeeba5c8b4791e4a57536d887f2e3dce199fb600ec7d0067a45778b44d0b928e3314e9a2c9c1ad6001b7459b3747cd9244a2962fa2a89cf347704c7c9506",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "claim_recovery"
+        ],
+        "now": 1760054400
+      }
     }
   ]
 }

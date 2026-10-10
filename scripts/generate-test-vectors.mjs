@@ -266,6 +266,30 @@ const PROFILE_CASES = [
       nonce: NONCE,
       parameters: {}
     })
+  },
+  {
+    name: 'base claim_invite',
+    signer: B,
+    allowed_actions: ['claim_invite'],
+    payload: base_payload({
+      domain: 'base.example.org',
+      action: 'claim_invite',
+      signer: B,
+      nonce: NONCE,
+      parameters: { invite_id: '1b4e28ba-2fa1-41d2-883f-0016d3cca427' }
+    })
+  },
+  {
+    name: 'base claim_recovery',
+    signer: B,
+    allowed_actions: ['claim_recovery'],
+    payload: base_payload({
+      domain: 'base.example.org',
+      action: 'claim_recovery',
+      signer: B,
+      nonce: NONCE,
+      parameters: { recovery_id: '6f1c2d3e4a5b4c6d8e7f001122334455' }
+    })
   }
 ]
 
@@ -527,6 +551,26 @@ const add_negative = ({
     message: link_canonical,
     signature: link_signature,
     verify: meta_verify,
+    error: ERROR_CODES.ACTION_NOT_ALLOWED
+  })
+
+  // A claim is not a sign-in: the claimant's key must not open a session
+  // through a claim it signed.
+  const claim_payload = PROFILE_CASES.find(
+    (c) => c.payload.action === 'claim_invite'
+  ).payload
+  const claim_canonical = canonicalize_json(claim_payload)
+  add_negative({
+    description:
+      'a claim_invite message offered where only create_session is allowed',
+    rule: 'action',
+    message: claim_canonical,
+    signature: sign_text(claim_canonical, KEY_B),
+    verify: {
+      domain: 'base.example.org',
+      actions: ['create_session'],
+      now: ISSUED_AT
+    },
     error: ERROR_CODES.ACTION_NOT_ALLOWED
   })
 

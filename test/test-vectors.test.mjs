@@ -36,7 +36,9 @@ const REGISTERED_PROFILES = [
   'nano.community register_username',
   'nostr bind_nostr_key',
   'nostr pledge',
-  'base.example.org create_session'
+  'base.example.org create_session',
+  'base.example.org claim_invite',
+  'base.example.org claim_recovery'
 ]
 
 const signed_hash = (vector) =>

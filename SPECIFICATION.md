@@ -202,6 +202,8 @@ A profile is a `(domain, action)` pair with its parameters and verifier policy.
 | `nostr`                  | `bind_nostr_key`          | the account                   | none (`{}`); `statement` required                  | no nonce; no window              |
 | `nostr`                  | `pledge`                  | the account                   | `issue_event_id`, `amount_raw`, `nostr_public_key` | no nonce; no window              |
 | the base instance's host | `create_session`          | the user's wallet key         | none (`{}`)                                        | nonce required; 5-minute window  |
+| the base instance's host | `claim_invite`            | the claimant's new key        | `invite_id`                                        | nonce required; 5-minute window  |
+| the base instance's host | `claim_recovery`          | the claimant's new key        | `recovery_id`                                      | nonce required; 5-minute window  |
 
 ### nano.community
 
@@ -251,6 +253,12 @@ It then runs the [verification algorithm](#verification-algorithm) on the rebuil
   - `domain` is the instance's public host as a browser reports it in `location.host`, for example `base.example.org`, including a non-default port. A sign-in captured on one instance cannot replay on another.
   - `parameters` is `{}`.
   - The verifier requires a nonce and `|now − issued_at| ≤ 300` seconds, and keeps nonces for at least 600 seconds.
+- **`claim_invite`** and **`claim_recovery`** bind a new key to an account by redeeming an invite or a recovery link.
+  - The new key signs. The signature proves the claimant holds the key being bound, and the verifier reads that key from the signature rather than from anywhere else in the request.
+  - The invite or recovery token in the same request authorizes the claim. The signature does not.
+  - `claim_invite` takes `invite_id`, the invite being claimed, as the instance names it.
+  - `claim_recovery` takes `recovery_id`, the 32-character lowercase hex id of the recovery link being redeemed.
+  - `domain` and the nonce and window policy are those of `create_session`. A verifier MUST accept each claim action only on its own route, so a claim never opens a session and a sign-in never redeems a claim.
 
 ## Registering a profile
 
@@ -268,7 +276,7 @@ A signature made under this format cannot be replayed as a signature of anything
 
 - **Blocks.** A direct-mode digest and a real block hash come from different preimages: one begins with the 21-byte text prefix `N…`, the other with the block preamble `00…06`. They match only through a blake2b-256 collision. A block-envelope signature is a block signature by design, over a block that cannot settle.
 - **Raw JSON hashes.** JSON never begins with `N`, so the prefix separates this format from any scheme that signs the blake2b hash of bare JSON, such as base's version-0 sign-in.
-- **Binary token preimages.** base's signed capabilities (`sigcap` prefix), share tokens (a fixed 53-byte preimage) and upload grants (`upload-grant-v1` prefix) never begin with `Nano Signed Message:`.
+- **Binary token preimages.** base's version 1 share tokens sign a fixed 53-byte preimage, which never begins with `Nano Signed Message:`. base's other bearer tokens are unsigned random secrets.
 - **nanomemotools.** It signs `"Nano Signed Message:\n" ‖ message ‖ block hash`, so its signed text ends in a hex block hash, while this format's ends in `}`. The two cannot produce the same signed text.
 - **Ledger nonce signing.** The Ledger Nano app signs `"Nano Signed Nonce:\n"` followed by a 16-byte nonce, 35 bytes in all, never a 32-byte digest.
 - **Applications.** `domain` and `action` are signed, so a signature for one application or one action is invalid for every other.

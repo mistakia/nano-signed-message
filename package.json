@@ -1,6 +1,6 @@
 {
   "name": "nano-signed-message",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Canonical signed messages for Nano accounts: prefixed RFC 8785 JSON, blake2b-256 digest, ed25519-blake2b signature in direct or block-envelope mode",
   "type": "module",
   "main": "index.mjs",

@@ -218,6 +218,20 @@
       "error": "action_not_allowed"
     },
     {
+      "description": "a claim_invite message offered where only create_session is allowed",
+      "rule": "action",
+      "message": "{\"account\":\"nano_3x5ursx65yfjh6rbi5fotwmcwnzqtsz9w69cer4z9ipr4j8mksphyjp9r9uz\",\"action\":\"claim_invite\",\"domain\":\"base.example.org\",\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"invite_id\":\"1b4e28ba-2fa1-41d2-883f-0016d3cca427\"},\"version\":1}",
+      "signature": "3047eba80a28785112554d712c8f7713821f81c5925623209086c2dba4bf0e50faf1cb24ba60dba411acbbfb9a3bce3968df6d9c181618b058efbfcf9eba1e0b",
+      "verify": {
+        "domain": "base.example.org",
+        "actions": [
+          "create_session"
+        ],
+        "now": 1760054400
+      },
+      "error": "action_not_allowed"
+    },
+    {
       "description": "verified at expires_at",
       "rule": "expiry",
       "message": "{\"account\":\"nano_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7\",\"action\":\"link_key\",\"domain\":\"nano.community\",\"expires_at\":1760054460,\"issued_at\":1760054400,\"nonce\":\"6e616e6f2d7369676e65642d6d736721\",\"parameters\":{\"linked_public_key\":\"f47bc67a41f9b17930980db5d726ae53f7d67e7e10ea6605f3c2d8144d3966cf\"},\"version\":1}",
